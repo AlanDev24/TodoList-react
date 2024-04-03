@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { InputComponent } from "./components/InputComponent";
+import { ListComponent } from "./components/ListComponent";
+
 
 export const AppComponent = () => {
 
@@ -41,11 +43,10 @@ export const AppComponent = () => {
         onNewTodo={(value) => onAddTodo(value)}
         />
 
-        {
-          todos.map((todo) => (
-            todo
-          ))
-        }
+        <ListComponent
+        todos={todos}
+        setTodos={setTodos}
+        />
       </main>
     </>
   );
